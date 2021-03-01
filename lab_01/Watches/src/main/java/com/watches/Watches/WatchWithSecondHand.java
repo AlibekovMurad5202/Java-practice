@@ -14,7 +14,7 @@ public class WatchWithSecondHand extends WatchWithoutSecondHand {
     
     public void setTime(int _hours, int _minutes, int _seconds) throws Exception {
         if ((_seconds < 0) || (_seconds > 59)) {
-            throw new Exception("Invalid value of _seconds");
+            throw new Exception("Invalid value of seconds");
         }
         setTime(_hours, _minutes);
         this.seconds = _seconds;
