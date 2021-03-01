@@ -15,7 +15,7 @@ public class WatchWithoutSecondHand extends WatchPrototype {
     }
     
     public void setTime(int _hours, int _minutes) throws Exception {
-        if ((_hours < 0) || (_hours > 23)) {
+        if ((_hours < 0) || (_hours > 11)) {
             throw new Exception("Invalid value of hours");
         }
         if ((_minutes < 0) || (_minutes > 59)) {
@@ -26,7 +26,7 @@ public class WatchWithoutSecondHand extends WatchPrototype {
     }
     
     public void addTime(int _hours, int _minutes) {
-        this.hours = (this.hours + _hours) % 24;
+        this.hours = (this.hours + _hours) % 12;
         this.minutes = (this.minutes + _minutes) % 60;
     }
     
