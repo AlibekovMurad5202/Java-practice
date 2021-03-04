@@ -26,7 +26,7 @@ public class WatchWithoutSecondHand extends WatchPrototype {
     }
     
     public void addTime(int _hours, int _minutes) {
-        this.hours = (this.hours + _hours) % 12;
+        this.hours = (this.hours + _hours + (this.minutes + _minutes) / 60) % 12;
         this.minutes = (this.minutes + _minutes) % 60;
     }
     

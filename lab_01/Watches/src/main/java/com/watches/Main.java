@@ -24,7 +24,7 @@ public class Main {
             System.out.println("\tTime after 3h and 8m: "
                 + watch_1.getHours() + ":" + watch_1.getMinutes());
         } catch (Exception ex) {
-            System.err.println("WTF!?");
+            System.err.println("  " + ex.getMessage());
         }
         
         WatchWithSecondHand watch_2 = new WatchWithSecondHand("Wow!!1", 19999);
@@ -43,7 +43,7 @@ public class Main {
                 + watch_2.getMinutes() + ":"
                 + watch_2.getSeconds());
         } catch (Exception ex) {
-            System.err.println("WTF!?");
+            System.err.println("  " + ex.getMessage());
         }
         
         WatchWithoutSecondHand watch_3 = new WatchWithoutSecondHand("Ouch!!1", 99);
@@ -58,7 +58,7 @@ public class Main {
             System.out.println("\tTime after 3h and 8m: "
                 + watch_1.getHours() + ":" + watch_1.getMinutes());
         } catch (Exception ex) {
-            System.err.println("WTF!?");
+            System.err.println("  " + ex.getMessage());
         }
     }
 }

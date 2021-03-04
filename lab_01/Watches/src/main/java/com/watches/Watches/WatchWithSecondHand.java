@@ -21,7 +21,7 @@ public class WatchWithSecondHand extends WatchWithoutSecondHand {
     }
     
     public void addTime(int _hours, int _minutes, int _seconds) {
-        addTime(_hours, _minutes);
+        addTime(_hours, _minutes + (this.seconds + _seconds) / 60);
         this.seconds = (this.seconds + _seconds) % 60;
     }
     
