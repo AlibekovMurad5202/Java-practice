@@ -17,4 +17,10 @@ public interface IWatches {
     void addHours(int hours);
     void addMinutes(int minutes);
     void addSeconds(int seconds) throws Exception;
+    
+    String getBrand();
+    double getPrice();
+    int getHours();
+    int getMinutes();
+    int getSeconds() throws Exception;
 }

@@ -13,7 +13,7 @@ import com.alarmclocks.Watches.*;
  */
 public class Main {
     public static void main(String[] args) {
-        IWatches watches = BWatches.build(WatchesType.WatchesHM);
+        IWatches watches = BWatches.build(WatchesType.WatchesHM, "Wow!!1", 14999.99);
         
         try {
             watches.setHours(11);

@@ -10,9 +10,24 @@ package com.alarmclocks.Watches;
  * @author murad
  */
 public class WatchesHM implements IWatches {
-    int hours = 0;
-    int minutes = 0;
+    private final String brand;
+    private final double price;
+    protected int hours = 0;
+    protected int minutes = 0;
 
+    public WatchesHM(String brand, double price) {
+        this.brand = brand;
+        this.price = price;
+    } 
+    
+    public String getBrand() {
+        return brand;
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+    
     @Override
     public void setHours(int hours) throws Exception {
         if ((hours < 0) || (hours > 11)) {
@@ -52,6 +67,21 @@ public class WatchesHM implements IWatches {
 
     @Override
     public void addSeconds(int seconds) throws Exception {
+        throw new Exception("There are not second hands");
+    }
+
+    @Override
+    public int getHours() {
+        return hours;
+    }
+
+    @Override
+    public int getMinutes() {
+        return minutes;
+    }
+
+    @Override
+    public int getSeconds() throws Exception {
         throw new Exception("There are not second hands");
     }
 }

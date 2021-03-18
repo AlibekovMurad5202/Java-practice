@@ -10,7 +10,11 @@ package com.alarmclocks.Watches;
  * @author murad
  */
 public class WatchesHMS extends WatchesHM {
-    int seconds = 0;
+    protected int seconds = 0;
+
+    public WatchesHMS(String brand, double price) {
+        super(brand, price);
+    }
     
     @Override
     public void setSeconds(int seconds) throws Exception {
@@ -25,6 +29,11 @@ public class WatchesHMS extends WatchesHM {
         this.hours = (this.hours + seconds / 3600) % 12;
         this.minutes = (this.minutes + (seconds % 3600) / 60) % 60;
         this.seconds = (this.seconds + seconds) % 60;
+    }
+        
+    @Override
+    public int getSeconds() throws Exception {
+        return seconds;
     }
     
     @Override
