@@ -11,5 +11,7 @@ package com.alarmclocks.Watches;
  */
 public enum WatchesType {
     WatchesHM,
-    WatchesHMS
+    WatchesHMS,
+    WatchesHMAlarm,
+    WatchesHMSAlarm
 }

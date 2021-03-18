@@ -5,6 +5,8 @@
  */
 package com.alarmclocks.Watches;
 
+import com.alarmclocks.AlarmClock.IAlarmClock;
+
 /**
  *
  * @author murad
@@ -55,12 +57,12 @@ public class WatchesHM implements IWatches {
     }
 
     @Override
-    public void addHours(int hours) {
+    public void addHours(int hours) throws Exception {
         this.hours = (this.hours + hours) % 12;
     }
 
     @Override
-    public void addMinutes(int minutes) {
+    public void addMinutes(int minutes) throws Exception {
         this.hours = (this.hours + (this.minutes + minutes) / 60) % 12;
         this.minutes = (this.minutes + minutes) % 60;
     }
@@ -83,5 +85,20 @@ public class WatchesHM implements IWatches {
     @Override
     public int getSeconds() throws Exception {
         throw new Exception("There are not second hands");
+    }
+
+    @Override
+    public void addAlarmClock(IAlarmClock alarmClock) throws Exception {
+        throw new Exception("There are not alarm clocks");
+    }
+
+    @Override
+    public Boolean isAlarmed() throws Exception {
+        throw new Exception("There are not alarm clocks");
+    }
+
+    @Override
+    public void Alarm() throws Exception {
+        throw new Exception("There are not alarm clocks");
     }
 }

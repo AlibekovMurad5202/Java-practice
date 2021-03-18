@@ -11,11 +11,17 @@ package com.alarmclocks.Watches;
  */
 public class BWatches {
     public static IWatches build(WatchesType type, String brand, double price) {
-        if (type == WatchesType.WatchesHM)
-            return new WatchesHM(brand, price);
-        else if (type == WatchesType.WatchesHMS)
-            return new WatchesHMS(brand, price);
-        else
-            return null;
+        switch (type) {
+            case WatchesHM:
+                return new WatchesHM(brand, price);
+            case WatchesHMS:
+                return new WatchesHMS(brand, price);
+            case WatchesHMAlarm:
+                return new WatchesHMAlarm(brand, price);
+            case WatchesHMSAlarm:
+                return new WatchesHMSAlarm(brand, price);
+            default:
+                return null;
+        }
     }
 }
