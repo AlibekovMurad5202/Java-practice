@@ -5,8 +5,7 @@
  */
 package com.alarmclocks;
 
-import com.alarmclocks.AlarmClock.AlarmClockHMS;
-import com.alarmclocks.AlarmClock.IAlarmClock;
+import com.alarmclocks.AlarmClock.*;
 import com.alarmclocks.Watches.*;
 
 /**
@@ -22,12 +21,12 @@ public class Main {
             watches.setMinutes(14);
             watches.setSeconds(43);
             
-            IAlarmClock alarm1 = new AlarmClockHMS();
+            IAlarmClock alarm1 = BAlarmClock.build(WatchesType.WatchesHMSAlarm);
             alarm1.setHours(7);
             alarm1.setMinutes(36);
             alarm1.setSeconds(52);
                         
-            IAlarmClock alarm2 = new AlarmClockHMS();
+            IAlarmClock alarm2 = BAlarmClock.build(WatchesType.WatchesHMSAlarm);
             alarm2.setHours(10);
             alarm2.setMinutes(24);
             alarm2.setSeconds(43);
