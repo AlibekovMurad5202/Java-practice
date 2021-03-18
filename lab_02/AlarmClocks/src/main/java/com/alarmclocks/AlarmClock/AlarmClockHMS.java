@@ -21,6 +21,11 @@ public class AlarmClockHMS extends AlarmClockHM {
     }
     
     @Override
+    public int getSeconds() throws Exception {
+        return seconds;
+    }
+    
+    @Override
     public String toString() {
        return hours + ":" + minutes + ":" + seconds;
     }

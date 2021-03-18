@@ -19,7 +19,7 @@ public class Main {
         
         try {
             watches.setHours(11);
-            watches.setMinutes(24);
+            watches.setMinutes(14);
             watches.setSeconds(43);
             
             IAlarmClock alarm1 = new AlarmClockHMS();
@@ -29,11 +29,19 @@ public class Main {
                         
             IAlarmClock alarm2 = new AlarmClockHMS();
             alarm2.setHours(10);
-            alarm2.setMinutes(14);
-            alarm2.setSeconds(29);
+            alarm2.setMinutes(24);
+            alarm2.setSeconds(43);
             
             watches.addAlarmClock(alarm1);
             watches.addAlarmClock(alarm2);
+            
+            System.err.print(watches + "\n\n");
+            watches.addHours(11);
+            System.err.print(watches + "\n\n");
+            
+            watches.addMinutes(10);
+            System.err.print(watches + "\n\n");
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
