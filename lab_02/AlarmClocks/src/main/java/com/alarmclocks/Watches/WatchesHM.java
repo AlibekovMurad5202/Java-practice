@@ -12,8 +12,8 @@ import com.alarmclocks.AlarmClock.IAlarmClock;
  * @author murad
  */
 public class WatchesHM implements IWatches {
-    private final String brand;
-    private final double price;
+    protected String brand;
+    protected double price;
     protected int hours = 0;
     protected int minutes = 0;
 
