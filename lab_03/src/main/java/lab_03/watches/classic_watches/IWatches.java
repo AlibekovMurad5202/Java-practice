@@ -24,8 +24,7 @@ public interface IWatches {
     
     void addEvent(IWatchesEventListener event);
     void removeEvent(IWatchesEventListener event);
+    
     void increaseTime() throws Exception;
     int getDelay();
-    void start() throws InterruptedException;
-    void stop();
 }

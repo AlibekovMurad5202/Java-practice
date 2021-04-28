@@ -92,41 +92,6 @@ public class WatchesHM implements IWatches {
     }
 
     @Override
-    public void start() throws InterruptedException {
-        if (thread == null) {
-            thread = new Thread() {
-                @Override
-                public void run() {
-                    flag = true;
-                    System.out.println("Watches launched!");
-                    
-                    while(flag) {
-                        try {
-                            thread.sleep(getDelay());
-                            increaseTime();
-                        } catch (InterruptedException e) {
-                            flag = false;
-                        } catch (Exception ex) {
-                            System.err.println("Ouch!!!");
-                        }
-                    }
-                }
-            };
-        }
-        
-        thread.start();
-    }
-
-    @Override
-    public void stop() {
-        if (thread != null) {
-            thread.interrupt();
-            thread = null;
-            System.out.println("Watches stopped!");
-        }
-    }
-
-    @Override
     public int getDelay() {
         return 1000 * 60;
     }

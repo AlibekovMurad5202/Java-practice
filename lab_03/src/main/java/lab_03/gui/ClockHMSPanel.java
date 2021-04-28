@@ -10,9 +10,11 @@ import lab_03.events.listeners.IWatchesEventListener;
 import lab_03.events.listeners.alarms.AlarmHMS;
 import lab_03.events.listeners.alarms.IAlarm;
 import lab_03.watches.BAlarmClock;
+import lab_03.controllers.threads.WatchesThreadController;
 import lab_03.watches.WatchesType;
 import lab_03.watches.alarm_clocks.IAlarmClock;
 import lab_03.watches.classic_watches.IWatches;
+import lab_03.controllers.threads.IWatchesThreadController;
 
 /**
  *
@@ -21,6 +23,8 @@ import lab_03.watches.classic_watches.IWatches;
 public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventListener {
 
     IAlarmClock clock;
+    IWatchesThreadController iwtc;
+    
     /**
      * Creates new form ClockHMSPanel
      */
@@ -29,6 +33,8 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
         time_label.setVisible(false);
         start_btn.setVisible(false);
         stop_btn.setVisible(false);
+        pause_btn.setVisible(false);
+        reset_btn.setVisible(false);
         alarm_btn.setVisible(false);
         
         
@@ -43,6 +49,8 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
         } catch (Exception e) {
             System.err.println("Ouch!!!");
         }
+        
+        iwtc = new WatchesThreadController(clock);
     }
 
     /**
@@ -61,6 +69,8 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
         start_btn = new javax.swing.JButton();
         time_label = new javax.swing.JLabel();
         stop_btn = new javax.swing.JButton();
+        reset_btn = new javax.swing.JButton();
+        pause_btn = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(455, 77));
@@ -108,18 +118,36 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
             }
         });
         add(stop_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 12, 128, -1));
+
+        reset_btn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        reset_btn.setText("Continue");
+        reset_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reset_btnActionPerformed(evt);
+            }
+        });
+        add(reset_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 43, 128, -1));
+
+        pause_btn.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pause_btn.setText("Pause");
+        pause_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pause_btnActionPerformed(evt);
+            }
+        });
+        add(pause_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(451, 12, 128, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void start_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_btnActionPerformed
         try {
-            clock.start();
+            iwtc.start();
         } catch (InterruptedException ex) {
             System.err.println("Ouch!!!");
         }
     }//GEN-LAST:event_start_btnActionPerformed
 
     private void stop_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stop_btnActionPerformed
-        clock.stop();
+        iwtc.stop();
     }//GEN-LAST:event_stop_btnActionPerformed
 
     private void alarm_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alarm_btnActionPerformed
@@ -131,11 +159,21 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
         }
     }//GEN-LAST:event_alarm_btnActionPerformed
 
+    private void reset_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset_btnActionPerformed
+        iwtc.reset();
+    }//GEN-LAST:event_reset_btnActionPerformed
+
+    private void pause_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pause_btnActionPerformed
+        iwtc.pause();
+    }//GEN-LAST:event_pause_btnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alarm_btn;
     private javax.swing.JComboBox<String> h_cb;
     private javax.swing.JComboBox<String> m_cb;
+    private javax.swing.JButton pause_btn;
+    private javax.swing.JButton reset_btn;
     private javax.swing.JComboBox<String> s_cb;
     private javax.swing.JButton start_btn;
     private javax.swing.JButton stop_btn;
@@ -148,7 +186,6 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
     }
     
     public void preparePanel(int h, int m, int s) {
-        
         try {
             clock.setHours(h);
             clock.setMinutes(m);
@@ -162,6 +199,8 @@ public class ClockHMSPanel extends javax.swing.JPanel implements IWatchesEventLi
         
         start_btn.setVisible(true);
         stop_btn.setVisible(true);
+        reset_btn.setVisible(true);
+        pause_btn.setVisible(true);
         alarm_btn.setVisible(true);
     }
     
