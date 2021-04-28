@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alarmclocks.Watches;
+package lab_02.watches;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public enum WatchesType {
     WatchesHM,
     WatchesHMS,
-    WatchesHMAlarm,
-    WatchesHMSAlarm
+    AlarmClockHM,
+    AlarmClockHMS
 }

@@ -3,11 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alarmclocks.Watches;
+package lab_02.watches;
+
+import lab_02.watches.classic_watches.IWatches;
+import lab_02.watches.classic_watches.WatchesHMS;
+import lab_02.watches.classic_watches.WatchesHM;
+import lab_02.watches.alarm_clocks.AlarmClockHM;
+import lab_02.watches.alarm_clocks.AlarmClockHMS;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public class BWatches {
     public static IWatches build(WatchesType type, String brand, double price) {
@@ -16,10 +22,10 @@ public class BWatches {
                 return new WatchesHM(brand, price);
             case WatchesHMS:
                 return new WatchesHMS(brand, price);
-            case WatchesHMAlarm:
-                return new WatchesHMAlarm(brand, price);
-            case WatchesHMSAlarm:
-                return new WatchesHMSAlarm(brand, price);
+            case AlarmClockHM:
+                return new AlarmClockHM(brand, price);
+            case AlarmClockHMS:
+                return new AlarmClockHMS(brand, price);
             default:
                 return null;
         }

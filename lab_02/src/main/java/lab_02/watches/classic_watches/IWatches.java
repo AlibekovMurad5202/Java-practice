@@ -3,18 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alarmclocks.AlarmClock;
+package lab_02.watches.classic_watches;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
-public interface IAlarmClock {
+public interface IWatches {
     void setHours(int hours) throws Exception;
     void setMinutes(int minutes) throws Exception;
     void setSeconds(int seconds) throws Exception;
     
+    String getBrand();
+    double getPrice();
     int getHours();
     int getMinutes();
     int getSeconds() throws Exception;
+    
+    void increaseTime() throws Exception;
 }

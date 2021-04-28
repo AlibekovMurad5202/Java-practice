@@ -3,23 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alarmclocks.Watches;
+package lab_02.watches.classic_watches;
 
-import com.alarmclocks.AlarmClock.IAlarmClock;
+import lab_02.events.publishers.WatchesEventManager;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public class WatchesHM implements IWatches {
     protected String brand;
     protected double price;
     protected int hours = 0;
     protected int minutes = 0;
+    
+    public WatchesEventManager events;
 
     public WatchesHM(String brand, double price) {
         this.brand = brand;
         this.price = price;
+        
+        events = new WatchesEventManager();
     } 
     
     public String getBrand() {
@@ -57,22 +61,6 @@ public class WatchesHM implements IWatches {
     }
 
     @Override
-    public void addHours(int hours) throws Exception {
-        this.hours = (this.hours + hours) % 12;
-    }
-
-    @Override
-    public void addMinutes(int minutes) throws Exception {
-        this.hours = (this.hours + (this.minutes + minutes) / 60) % 12;
-        this.minutes = (this.minutes + minutes) % 60;
-    }
-
-    @Override
-    public void addSeconds(int seconds) throws Exception {
-        throw new Exception("There are not second hands");
-    }
-
-    @Override
     public int getHours() {
         return hours;
     }
@@ -88,17 +76,13 @@ public class WatchesHM implements IWatches {
     }
 
     @Override
-    public void addAlarmClock(IAlarmClock alarmClock) throws Exception {
-        throw new Exception("There are not alarm clocks");
+    public void increaseTime() throws Exception {
+        this.addMinutes(1);
+        events.update(this);
     }
 
-    @Override
-    public Boolean isAlarmed() throws Exception {
-        throw new Exception("There are not alarm clocks");
-    }
-
-    @Override
-    public void Alarm() throws Exception {
-        throw new Exception("There are not alarm clocks");
+    protected void addMinutes(int minutes) {
+        this.hours = (this.hours + (this.minutes + minutes) / 60) % 12;
+        this.minutes = (this.minutes + minutes) % 60;
     }
 }

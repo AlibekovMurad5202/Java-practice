@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alarmclocks.Watches;
+package lab_02.watches.classic_watches;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public class WatchesHMS extends WatchesHM {
     protected int seconds = 0;
@@ -23,13 +23,6 @@ public class WatchesHMS extends WatchesHM {
         }
         this.seconds = seconds;
     }
-    
-    @Override
-    public void addSeconds(int seconds) throws Exception {
-        this.hours = (this.hours + seconds / 3600) % 12;
-        this.minutes = (this.minutes + (seconds % 3600) / 60) % 60;
-        this.seconds = (this.seconds + seconds) % 60;
-    }
         
     @Override
     public int getSeconds() throws Exception {
@@ -39,5 +32,17 @@ public class WatchesHMS extends WatchesHM {
     @Override
     public String toString() {
        return hours + ":" + minutes + ":" + seconds;
+    }
+    
+    @Override
+    public void increaseTime() throws Exception {
+        this.addSeconds(1);
+        events.update(this);
+    }
+    
+    protected void addSeconds(int seconds) {
+        this.hours = (this.hours + seconds / 3600) % 12;
+        this.minutes = (this.minutes + (seconds % 3600) / 60) % 60;
+        this.seconds = (this.seconds + seconds) % 60;
     }
 }
