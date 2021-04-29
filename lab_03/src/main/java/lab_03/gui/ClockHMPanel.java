@@ -5,7 +5,6 @@
  */
 package lab_03.gui;
 
-import javax.swing.JOptionPane;
 import lab_03.events.listeners.IWatchesEventListener;
 import lab_03.events.listeners.alarms.AlarmHM;
 import lab_03.events.listeners.alarms.IAlarm;
@@ -72,6 +71,7 @@ public class ClockHMPanel extends javax.swing.JPanel implements IWatchesEventLis
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setMinimumSize(new java.awt.Dimension(455, 77));
+        setPreferredSize(new java.awt.Dimension(455, 77));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         h_cb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

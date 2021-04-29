@@ -5,7 +5,6 @@
  */
 package lab_03.gui;
 
-import javax.swing.JOptionPane;
 import lab_03.events.listeners.IWatchesEventListener;
 import lab_03.events.listeners.alarms.AlarmHMS;
 import lab_03.events.listeners.alarms.IAlarm;

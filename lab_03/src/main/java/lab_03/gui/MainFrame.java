@@ -35,6 +35,8 @@ public class MainFrame extends javax.swing.JFrame {
         clockHMS = new lab_03.gui.ClockHMSPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("AlarmClocks");
+        setName("mainFrame"); // NOI18N
 
         jPanel1.setLayout(new java.awt.GridLayout(0, 1));
         jScrollPane1.setViewportView(jPanel1);
