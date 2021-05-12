@@ -24,7 +24,12 @@ public class AlarmHM implements IAlarm {
     @Override
     public void handleEvent(IWatches watches) throws Exception {
         if ((this.h == watches.getHours()) && this.m == watches.getMinutes()) {
-            alarm();
+            Thread alarmThread = new Thread(new Runnable(){
+                public void run(){
+                    alarm();
+                }
+            });
+            alarmThread.start();
         }
     }
     
