@@ -12,5 +12,5 @@ import lab_03.events.listeners.IWatchesEventListener;
  * @author AlibekovMurad5202
  */
 public interface IAlarm extends IWatchesEventListener {
-    
+    void alarm();
 }

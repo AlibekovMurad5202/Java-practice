@@ -28,16 +28,14 @@ public class AlarmHMS implements IAlarm {
         if ((this.h == watches.getHours())
                 && this.m == watches.getMinutes()
                 && this.s == watches.getSeconds()) {
-            Thread alarmThread = new Thread(new Runnable(){
-                public void run(){
-                    alarm();
-                }
+            Thread alarmThread = new Thread(() -> {
+                alarm();
             });
             alarmThread.start();
         }
     }
     
-    protected void alarm() {
+    public void alarm() {
         System.out.println("ALARM!!!");
         System.out.println("ALARM!!!");
         System.out.println("ALARM!!!");
