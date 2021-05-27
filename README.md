@@ -15,4 +15,4 @@ _Примечание_: каждая следующая лабораторная
 ### Удачи!
 
 <!-- Links -->
-[labs]: https://github.com/AlibekovMurad5202/Java-practice/tree/main/labs.md (labs.md)
+[labs]: https://github.com/AlibekovMurad5202/Java-practice/blob/main/labs.md (labs.md)
