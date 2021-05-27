@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab_05.gui;
+package lab_05.client.gui;
+
+import lab_05.controllers.GUI_Controller;
 
 /**
  *

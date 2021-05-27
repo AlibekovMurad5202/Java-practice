@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab_05.gui;
+package lab_05.client.gui;
 
+import lab_05.client.Client;
+import lab_05.controllers.GUI_Controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.awt.Component;
@@ -49,8 +51,8 @@ public class ClientMainFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
-        clockHM = new lab_05.gui.ClockHMPanel();
-        clockHMS = new lab_05.gui.ClockHMSPanel();
+        clockHM = new lab_05.client.gui.ClockHMPanel();
+        clockHMS = new lab_05.client.gui.ClockHMSPanel();
         Connect = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -222,8 +224,8 @@ public class ClientMainFrame extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Connect;
-    private lab_05.gui.ClockHMPanel clockHM;
-    private lab_05.gui.ClockHMSPanel clockHMS;
+    private lab_05.client.gui.ClockHMPanel clockHM;
+    private lab_05.client.gui.ClockHMSPanel clockHMS;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;

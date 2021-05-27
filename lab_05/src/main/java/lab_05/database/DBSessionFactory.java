@@ -13,7 +13,7 @@ import org.hibernate.cfg.Configuration;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public class DBSessionFactory {
     private static SessionFactory sessionFactory;
@@ -32,7 +32,6 @@ public class DBSessionFactory {
                                 .applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (Exception e) {
-                //System.out.println("Exception: " + e);
                 e.printStackTrace();
             }
         }

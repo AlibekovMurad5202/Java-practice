@@ -45,7 +45,7 @@ public class WatchesThreadController implements IWatchesThreadController {
                         } catch (InterruptedException e) {
                             flag = false;
                         } catch (Exception ex) {
-                            System.err.println("Ouch!!!2");
+                            System.err.println("Ouch!!!");
                         }
                     }
                 }

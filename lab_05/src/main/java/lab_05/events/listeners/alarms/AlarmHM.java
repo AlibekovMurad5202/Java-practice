@@ -5,10 +5,7 @@
  */
 package lab_05.events.listeners.alarms;
 
-import java.beans.Transient;
-import java.util.LinkedList;
 import javax.persistence.*;
-import javax.swing.JOptionPane;
 import lab_05.events.listeners.IAlarmListener;
 import lab_05.watches.classic_watches.IWatches;
 
@@ -27,6 +24,7 @@ public class AlarmHM implements IAlarm {
     
     @Column (name = "hours")
     public int h = 0;
+    
     @Column (name = "minutes")
     public int m = 0;
     

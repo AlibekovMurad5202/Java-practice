@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab_05.gui;
+package lab_05.client;
 
+import lab_05.controllers.GUI_Controller;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import lab_05.client.gui.ClientMainFrame;
 
 /**
  *

@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
 
 /**
  *
- * @author murad
+ * @author AlibekovMurad5202
  */
 public class DBManager {
     public void insertAlarm(IAlarm alarm) {

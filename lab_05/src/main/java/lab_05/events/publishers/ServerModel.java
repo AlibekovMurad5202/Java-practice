@@ -9,13 +9,11 @@ import java.util.ArrayList;
 import lab_05.database.DBManager;
 import lab_05.events.listeners.IAlarmListener;
 import lab_05.events.listeners.IWatchesEventListener;
-import lab_05.events.listeners.alarms.AlarmHM;
 import lab_05.events.listeners.alarms.IAlarm;
 import lab_05.server.ModelDataObject;
 import lab_05.server.Request;
 import lab_05.watches.BAlarmClock;
 import lab_05.watches.WatchesType;
-import lab_05.watches.alarm_clocks.AlarmClockHM;
 import lab_05.watches.alarm_clocks.IAlarmClock;
 import lab_05.watches.classic_watches.IWatches;
 
@@ -44,7 +42,6 @@ public class ServerModel extends ServerEventPublisher
                 
                 alarm.addListener(this);
                 clocks.get(clockID).addAlarm(alarm);
-                // addAlarm(alarm, clocks.size() - 1);
                 update();
             }
         }
@@ -64,7 +61,6 @@ public class ServerModel extends ServerEventPublisher
                 
                 alarm.addListener(this);
                 clocks.get(clockID).addAlarm(alarm);
-                // addAlarm(alarm, clocks.size() - 1);
                 update();
             }
         }
@@ -125,9 +121,6 @@ public class ServerModel extends ServerEventPublisher
                     deleteAlarm(alarm, i);
                     req.setRequestType(10);
                     allRequests.addRequest(req);
-                    // clocks.get(i).clock.removeAlarm(alarm);
-                    // clocks.get(i).alarms.remove(alarm);
-                    // db.deleteAlarm(alarm);
                 }
             }
         }

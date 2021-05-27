@@ -57,5 +57,4 @@ public class AlarmClockHM extends WatchesHM implements IAlarmClock {
     public void removeAlarm(IAlarm alarm) throws Exception {
         events.removeListener(alarm);
     }
-    
 }

@@ -109,9 +109,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="lab_05.gui.ClockHMPanel" name="clockHM">
+    <Component class="lab_05.client.gui.ClockHMPanel" name="clockHM">
     </Component>
-    <Component class="lab_05.gui.ClockHMSPanel" name="clockHMS">
+    <Component class="lab_05.client.gui.ClockHMSPanel" name="clockHMS">
     </Component>
     <Component class="javax.swing.JToggleButton" name="Connect">
       <Properties>

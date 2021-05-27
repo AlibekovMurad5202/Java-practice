@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.swing.JOptionPane;
 import lab_05.events.listeners.IAlarmListener;
 import lab_05.watches.classic_watches.IWatches;
 

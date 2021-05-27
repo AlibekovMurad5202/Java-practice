@@ -18,7 +18,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import lab_05.events.listeners.alarms.AlarmHM;
 import lab_05.events.listeners.alarms.AlarmHMS;
-import lab_05.events.listeners.alarms.IAlarm;
 import lab_05.events.publishers.ServerModel;
 import lab_05.server.Request;
 import lab_05.server.RequestsPool;
@@ -30,7 +29,7 @@ import lab_05.events.publishers.IServerEventPublisher;
  *
  * @author AlibekovMurad5202
  */
-public class CSI extends Thread implements IServerEventListener {//, IWatchesEventListener {
+public class CSI extends Thread implements IServerEventListener {
     Socket clientSocket;
     ServerModel model;
     
@@ -50,8 +49,6 @@ public class CSI extends Thread implements IServerEventListener {//, IWatchesEve
         } catch (IOException ex) {
             Logger.getLogger(CSI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
         
         this.sendResponse(model.allRequests.getRequests());
         this.model.addListener(this);
